@@ -1,3 +1,4 @@
 /endpoints
 /airflow
 /data_process
+*.DS_Store

@@ -4,11 +4,10 @@
 ## Web UI
 ### Web design:
 // link figma
-// list features
 
 
 ### User flow:
-// ![User flow]()
+ ![User flow](resources/images/SeerBOT_User%20Flow.png)
 
 
 ## Backend
