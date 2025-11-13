@@ -64,5 +64,9 @@ An orchestration layer schedules these jobs, enforces dependency order (for exam
 - Safe deploys: schema changes and data migrations are rolled out in small, reversible steps and validated on staging data before production.
 
 ### Technical analysis:
-[Details backtest](resources/backtests/new_backtest_report.md)
+[Details backtest 1](resources/backtests/backtest_report.md)
 
+[Details backtest 2](resources/backtests/new_backtest_report.md)
+
+### Docs
+[Trade algorithm and AI integration plan](https://docs.google.com/document/d/1MLxm0QokDywJMqHItA40bd2RkJ77MbrSO9cghgu6C-c/edit?usp=sharing)
