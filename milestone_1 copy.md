@@ -1,14 +1,38 @@
-
-# Key Features
-### Technical Analysis
+# Project Overview
+## 1. Key Features
+### 1.1. Technical Analysis
 The Technical Analysis module is one of the core components of SeerBOT, providing users with real-time analytical insights into tokens on the Cardano ecosystem. This module focuses on computing key technical indicators, displaying them directly on price charts, and generating trend suggestions that help users quickly identify potential uptrend or downtrend signals.
 
 SeerBOT continuously processes on-chain price data to calculate three widely used indicators: Relative Strength Index (RSI), Average Directional Index (ADX), and Parabolic Stop and Reverse (PSAR). These indicators are overlayed on the interactive trading chart, enabling users to visually analyze token movements.
 
-#### Backtest:
-[Details backtest 1](resources/backtests/backtest_report.md)
+Based on indicator outputs, SeerBOT also provides automated trend suggestions, highlighting tokens that show signs of an emerging uptrend or downtrend. These suggestions are generated from the combined behavior of the three indicators.
 
-### On-chain Swap
+#### Relative Strength Index (RSI):
+RSI measures the momentum of price changes by comparing recent gains and losses. It helps identify whether a token is overbought or oversold.\
+- RSI oscillates between 0 and 100.\
+- RSI > 70 often indicates the token may be overbought (strong upward momentum but possible reversal).\
+- RSI < 30 suggests the token may be oversold (strong downward pressure but possible rebound).\
+
+RSI is displayed as a separate indicator below the main chart. 
+
+#### Average Directional Index (ADX)
+ADX measures the strength of a trend, regardless of whether the price is moving up or down.\
+- ADX typically ranges from 0 to 50+.
+- ADX < 20 indicates a weak or sideways market.
+- ADX > 25 implies a clear and strengthening trend.
+
+ADX is displayed as a separate indicator below the main chart. 
+
+#### Parabolic Stop and Reverse (PSAR)
+PSAR identifies potential reversals and provides clear trend direction signals.
+- PSAR is plotted as a series of dots on the price chart.
+- Dots below price indicate an uptrend.
+- Dots above price indicate a downtrend.
+- When dots flip sides, this suggests a possible trend reversal.
+
+PSAR provides immediate and intuitive signals on the chart, supporting users in spotting trend changes. 
+
+### 1.2. On-chain Swap
 The On-chain Swap module enables users to execute token swaps directly within the SeerBOT trading interface, without leaving the platform. This feature is fully integrated with the Minswap SDK, leveraging the liquidity pools and routing logic provided by the Cardano DeFi ecosystem.\
 **Trade Request**: Users specify the input token, output token, and swap amount directly within SeerBOT’s UI.\
 **Wallet Interaction*: The transaction is presented to the user’s connected Cardano wallet (Lace, Eternl). Users review and sign the transaction on-chain.\
@@ -20,7 +44,7 @@ Real-time price and slippage estimates: Pulled directly from Minswap liquidity p
 - Error handling: Clear prompts when liquidity is insufficient, price impact is too high, or the wallet fails to sign.
 
 
-### AI Chatbot
+### 1.3. AI Chatbot
 The AI Chatbot module is an intelligent assistant built specifically to answer user questions related to tokens and market dynamics within the Cardano ecosystem. While powered by the ChatGPT API, it is custom-tuned for Cardano assets, ensuring responses are focused, accurate, and relevant.\
 
 Users can ask natural-language questions such as:
@@ -103,7 +127,6 @@ An orchestration layer schedules these jobs, enforces dependency order (for exam
 - Logging and metrics: scheduled jobs emit start/stop, processed-record counts, and error signals for alerting.
 - Safe deploys: schema changes and data migrations are rolled out in small, reversible steps and validated on staging data before production.
 
+### Technical analysis:
+[Details backtest](resources/backtests/new_backtest_report.md)
 
-
-### Docs
-[Trade algorithm and AI integration plan](https://docs.google.com/document/d/1MLxm0QokDywJMqHItA40bd2RkJ77MbrSO9cghgu6C-c/edit?usp=sharing)
