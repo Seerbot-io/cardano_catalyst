@@ -43,9 +43,6 @@ The chatbot responds with concise, domain-specific information curated for ADA-b
 ![system architecture](resources/images/system_architecture.drawio.png)
 
 ## Web UI
-### Web design:
-// link figma
-
 
 ### User flow:
  ![User flow](resources/images/SeerBOT_User%20Flow.png)
