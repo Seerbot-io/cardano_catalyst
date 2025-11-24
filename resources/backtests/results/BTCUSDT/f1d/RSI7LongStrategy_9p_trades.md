@@ -1,0 +1,2 @@
+| Size   | EntryBar   | ExitBar   | EntryPrice   | ExitPrice   | SL   | TP   | PnL   | ReturnPct   | EntryTime   | ExitTime   | Duration   | Tag   |
+|--------|------------|-----------|--------------|-------------|------|------|-------|-------------|-------------|------------|------------|-------|
