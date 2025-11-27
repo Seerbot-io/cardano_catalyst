@@ -5,8 +5,23 @@ The Technical Analysis module is one of the core components of SeerBOT, providin
 
 SeerBOT continuously processes on-chain price data to calculate three widely used indicators: Relative Strength Index (RSI), Average Directional Index (ADX), and Parabolic Stop and Reverse (PSAR). These indicators are overlayed on the interactive trading chart, enabling users to visually analyze token movements.
 
-#### Backtest:
-[Details backtest 1](resources/backtests/backtest_report.md)
+- **PSAR & DCA Strategy Summary:**
+
+  This Parabolic SAR + DCA strategy enters long positions when the Parabolic SAR flips from downtrend (-1) to uptrend (1), executing at the open price of the signal candle. While in a position, it adds $500 when price moves 5% higher or lower than the initial entry (one DCA per direction). It exits at the open price when either the SAR flips back to downtrend or a 5% take-profit is reached. All trades use a fixed $500 per entry, with entries and exits at open prices to simulate realistic execution.
+  
+  [Strategy backtest result](./resources/backtests/cardano_backtest/Report_ADX_and_DCA_Strategy)
+  
+- **ADX & DCA Strategy Summary:**
+
+  This strategy enters long positions when ADX > 25, +DI > -DI, and RSI < 70, using a fixed $500 entry at the close. It adds a $500 DCA when price moves 5% above or below the first entry (once per direction). Exits occur at a 5% take profit or when ADX > 25, -DI > +DI, and RSI > 30. Starting capital is $10,000, and all trades execute at close prices. The goal is to capture strong trends with ADX while using DCA to improve average entry prices during volatility.
+ 
+  [Strategy backtest result](./resources/backtests/cardano_backtest/Report_ADX_and_DCA_Strategy/)
+
+- **RSI14 & DCA Strategy:**
+
+  RSI14 & DCA Strategy uses RSI14 ≤ 30 for initial entries and DCA (max 3 times) on red candles with RSI < 30, with $500 fixed positions and $10,000 initial capital. Exits at +5% take profit, -2.5% stop loss, or RSI ≥ 70. Current performance: 3 profitable, 21 loss-making reports. Issues: 1H timeframe losses, early exits (5% TP), no stop loss, unlimited DCA, no trend/volume filters. Proposed improvements: avoid 1H (use 4H+), raise TP to 8–10%, add 4% stop loss, tighten RSI to ≤25/≥75, limit DCA to 3, add EMA20 trend filter (price not >5% below EMA20), require volume ≥1.2x MA, add multi-timeframe confirmation, and implement trailing stops (breakeven at 3% profit, 2% trailing at 5%). Expected: higher average profit, fewer losses, better win rate, reduced drawdown.
+
+  [Strategy backtest result](./resources/backtests/cardano_backtest/Report_RSI14_Signals_and_DCA_Strategy/)
 
 ### On-chain Swap
 The On-chain Swap module enables users to execute token swaps directly within the SeerBOT trading interface, without leaving the platform. This feature is fully integrated with the Minswap SDK, leveraging the liquidity pools and routing logic provided by the Cardano DeFi ecosystem.\
