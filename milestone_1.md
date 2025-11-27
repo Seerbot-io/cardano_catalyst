@@ -9,7 +9,7 @@ SeerBOT continuously processes on-chain price data to calculate three widely use
 
   This Parabolic SAR + DCA strategy enters long positions when the Parabolic SAR flips from downtrend (-1) to uptrend (1), executing at the open price of the signal candle. While in a position, it adds $500 when price moves 5% higher or lower than the initial entry (one DCA per direction). It exits at the open price when either the SAR flips back to downtrend or a 5% take-profit is reached. All trades use a fixed $500 per entry, with entries and exits at open prices to simulate realistic execution.
   
-  [Strategy backtest result](./resources/backtests/cardano_backtest/Report_ADX_and_DCA_Strategy)
+  [Strategy backtest result](./resources/backtests/cardano_backtest/Report_PSAR_And_DCA/)
   
 - **ADX & DCA Strategy Summary:**
 
